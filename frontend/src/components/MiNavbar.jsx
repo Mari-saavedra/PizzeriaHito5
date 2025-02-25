@@ -4,10 +4,9 @@ import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import { Link } from 'react-router-dom'
 
-const NavbarNuevo = () => {
+const MiNavbar = () => {
   // const total = 25000
-  const token = false
-
+  // const token = false
   return (
     <Navbar bg='dark' variant='dark' expand='lg'>
       <Container>
@@ -15,7 +14,11 @@ const NavbarNuevo = () => {
 
         <Nav className='me-auto d-flex gap-2'>
           <Link to='/' className='text-decoration-none ms-3 text-white'>🍕 Home</Link>
+          <Link to='/register' className='text-decoration-none ms-3 text-white'>Register</Link>
+          <Link to='/login' className='text-decoration-none ms-3 text-white'>Login</Link>
+          <Link to='/profile' className='text-decoration-none ms-3 text-white'>Profile</Link>
 
+          {/*
           {token
             ? (
               <>
@@ -29,18 +32,17 @@ const NavbarNuevo = () => {
                 <Link to='/register' className='text-decoration-none ms-3 text-white'>Register</Link>
               </>
               )}
+            */
+            }
+        </Nav>
 
-        </Nav>
-        {/*
         <Nav>
-          <button type='button' className='btn btn-outline-warning fw-bold text-primary btn-sm'>
-            🛒 Total: ${formateaNumero(total)}
-          </button>
+          <Link to='/cart' className='text-decoration-none ms-3 text-white'>🛒 Total $ xxx</Link>
         </Nav>
-        */}
+
       </Container>
     </Navbar>
   )
 }
 
-export default NavbarNuevo
+export default MiNavbar

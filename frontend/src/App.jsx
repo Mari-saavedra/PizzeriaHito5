@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import NavbarNuevo from './components/NavbarNuevo'
+import MiNavbar from './components/MiNavbar'
 
 import Home from './pages/Home'
 import Register from './pages/Register'
@@ -15,7 +15,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <NavbarNuevo />
+        <MiNavbar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
