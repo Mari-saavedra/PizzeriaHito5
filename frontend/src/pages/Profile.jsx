@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Swal from 'sweetalert2'
 
 const Profile = () => {
-  const [email, setEmail] = useState('msaavedra@live.cl')
+  const [email, setEmail] = useState('micorreo@correo.cl')
 
   const handleChange = (e) => {
     setEmail(e.target.value)

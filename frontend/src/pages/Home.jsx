@@ -15,7 +15,6 @@ const Home = () => {
 
   useEffect(() => {
     getPizzas()
-    console.log('Home se ha montado')
   }, [])
 
   return (
