@@ -13,7 +13,7 @@ const Profile = () => {
 
     Swal.fire({
       title: 'Listo!',
-      text: 'Su sesión se cerro correctamente.',
+      text: 'Su sesión se cerró correctamente.',
       icon: 'ok'
     })
 

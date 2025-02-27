@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 
 const Home = () => {
   const [pizzas, setPizzas] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const getPizzas = async () => {
     const res = await fetch('http://localhost:5000/api/pizzas')
@@ -15,6 +16,7 @@ const Home = () => {
 
   useEffect(() => {
     getPizzas()
+    setLoading(false)
   }, [])
 
   return (
@@ -22,18 +24,27 @@ const Home = () => {
       <Header />
 
       <div className='container p-3'>
-        <div className='d-flex justify-content-center gap-3 flex-wrap p-0 m-0'>
-          {pizzas.map(pizza => (
-            <CardPizza
-              key={pizza.id}
-              img={pizza.img}
-              ingredients={pizza.ingredients}
-              name={pizza.name}
-              price={pizza.price}
-            />
-          ))}
-
-        </div>
+        {
+        loading
+          ? (
+            <div className='d-flex justify-content-center align-items-center' style={{ height: '50vh' }}>
+              <div className='spinner-border text-primary' role='status' />
+            </div>
+            )
+          : (
+            <div className='d-flex justify-content-center gap-3 flex-wrap p-0 m-0'>
+              {pizzas.map(pizza => (
+                <CardPizza
+                  key={pizza.id}
+                  img={pizza.img}
+                  ingredients={pizza.ingredients}
+                  name={pizza.name}
+                  price={pizza.price}
+                />
+              ))}
+            </div>
+            )
+        }
       </div>
     </>
   )

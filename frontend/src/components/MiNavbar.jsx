@@ -31,9 +31,7 @@ const MiNavbar = () => {
 
           <Nav>
             <Link to='/cart' className='text-decoration-none ms-3 text-white'>
-              {/* <Button variant='primary' className='ms-3'> */}
               <Button variant='dark' className='btn btn-outline-warning fw-bold text-primary btn-sm'>
-
                 🛒 Total: ${formateaNumero(total)}<span className='badge bd-warning' />
               </Button>
             </Link>
